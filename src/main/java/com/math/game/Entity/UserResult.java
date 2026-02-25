@@ -1,19 +1,19 @@
-package com.math.game.DTO;
-
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+package com.math.game.Entity;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
-@Data
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserResultDTO {
-
+@Data
+public class UserResult {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private Long userId;
 
     @NotNull
     private int firstNumber;
@@ -29,5 +29,10 @@ public class UserResultDTO {
     private int userSecondNumber;
     @NotNull
     private int userAnswer;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
 
 }

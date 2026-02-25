@@ -1,4 +1,7 @@
 package com.math.game.Repository;
 
-public interface PcResultRepository {
+import com.math.game.Entity.PcResult;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PcResultRepository extends JpaRepository<PcResult, Long> {
 }

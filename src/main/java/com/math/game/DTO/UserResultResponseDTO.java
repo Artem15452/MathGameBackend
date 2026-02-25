@@ -1,7 +1,5 @@
 package com.math.game.DTO;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,25 +7,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserResultDTO {
-
+public class UserResultResponseDTO {
     private Long id;
-
-    private Long userId;
-
-    @NotNull
     private int firstNumber;
-    @NotNull
     private int secondNumber;
-    @NotBlank
     private String operation;
-    @NotNull
     private int correctAnswer;
-    @NotNull
     private int userFirstNumber;
-    @NotNull
     private int userSecondNumber;
-    @NotNull
     private int userAnswer;
-
+    private UserDTO user;
 }

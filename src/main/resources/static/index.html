@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Math random game</title>
+</head>
+<body>
+<nav>
+    <a href="/login.html"> Логін </a>
+    <a href="/register.html"> Реєстрація </a>
+    <a href="/TableResult.html"> Таблиця результатів</a>
+</nav>
+
+<div>
+    <h4> Виберіть символ та введіть максимальне значення виразу </h4>
+    <select id="selectSymbol">
+        <option>+</option>
+        <option>-</option>
+    </select>
+    <input id="selectedRandom" placeholder="Введіть максимальне значення">
+    <br><br>
+    <button id="startGame"> почати гру </button>
+    <h4 id="realResult"> Вираз </h4>
+</div>
+
+<div>
+    <input id="numberOne" placeholder="Введіть число №1">
+    <h4 id="symbol"></h4>
+    <input id="numberTwo" placeholder="Введіть число №2">
+    <br><br>
+    <button id="confirmBtn"> Підтвердити вираз </button>
+    <h4 id="result">result</h4>
+</div>
+
+<div id="historySection" style="margin-top: 20px;">
+    <h4>Історія спроб</h4>
+    <div style="max-height: 300px; overflow-y: auto; border: 1px solid #ccc;">
+        <table border="1" style="width: 100%; border-collapse: collapse; text-align: center;">
+            <thead style="position: sticky; top: 0; background-color: #f2f2f2; z-index: 1;">
+            <tr>
+                <th>№</th>
+                <th>Ваш варіант</th>
+                <th>Правильний варіант</th>
+                <th>Статус</th>
+            </tr>
+            </thead>
+            <tbody id="historyBody"></tbody>
+        </table>
+    </div>
+</div>
+
+<script src="/js/index.js"></script>
+</body>
+</html>
