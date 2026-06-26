@@ -5,24 +5,18 @@ import com.math.game.Entity.PcResult;
 import com.math.game.Repository.PcResultRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import com.math.game.mapper.PcResultMapper;
 
 @AllArgsConstructor
 @Service
 public class PcResultService {
 
     private final PcResultRepository pcResultRepository;
-
-    public void transformDToEntity(PcResultDTO pcResultDTO,PcResult pcResult){
-        pcResult.setResult(pcResultDTO.getResult());
-        pcResult.setOperation(pcResultDTO.getOperation());
-        pcResult.setSecondNumber(pcResultDTO.getSecondNumber());
-        pcResult.setFirstNumber(pcResultDTO.getFirstNumber());
-    }
+    private final PcResultMapper pcResultMapper;
 
     public void saveResult(PcResultDTO pcResultDTO) {
 
-        PcResult pcResult = new PcResult();
-        transformDToEntity(pcResultDTO,pcResult);
+        PcResult pcResult = pcResultMapper.toPcResult(pcResultDTO);
         pcResultRepository.save(pcResult);
 
     }

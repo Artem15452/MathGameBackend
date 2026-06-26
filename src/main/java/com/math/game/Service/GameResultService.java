@@ -7,15 +7,14 @@ import com.math.game.Entity.User;
 import com.math.game.Repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
 @AllArgsConstructor
 @Service
 public class GameResultService {
 
     private final UserResultService userResultService;
     private final PcResultService pcResultService;
-    private final UserService userService;
     private final UserRepository userRepository;
-
 
     public void saveGameResult(GameResultDTO gameResultDTO) {
 
@@ -36,8 +35,6 @@ public class GameResultService {
 
         userResultService.saveResult(userResultDTO);
 
-
-
         PcResultDTO pcResultDTO = new PcResultDTO();
         pcResultDTO.setFirstNumber(gameResultDTO.getFirstNumber());
         pcResultDTO.setSecondNumber(gameResultDTO.getSecondNumber());
@@ -47,4 +44,3 @@ public class GameResultService {
         pcResultService.saveResult(pcResultDTO);
     }
 }
-
